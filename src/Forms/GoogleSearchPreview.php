@@ -4,6 +4,7 @@ namespace QuinnInteractive\Seo\Forms;
 
 use QuinnInteractive\Seo\Extensions\PageHealthExtension;
 use QuinnInteractive\Seo\Extensions\PageSeoExtension;
+use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Control\Controller;
 use SilverStripe\Control\Director;
 use SilverStripe\Forms\LiteralField;
@@ -30,9 +31,10 @@ class GoogleSearchPreview extends LiteralField
     /**
      * HealthAnalysisField constructor.
      *
+     * @psalm-suppress UndefinedClass
      * @param string                                     $name
      * @param \SilverStripe\Forms\FormField|string       $title
-     * @param \Page|PageHealthExtension|PageSeoExtension $page
+     * @param SiteTree|PageHealthExtension|PageSeoExtension $page
      * @param simple_html_dom                            $domParser
      */
     public function __construct($name, $title, $page, simple_html_dom $domParser)

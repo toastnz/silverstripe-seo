@@ -19,7 +19,7 @@ class HealthAnalysisField extends LiteralField
 {
 
     /**
-     * @var \Page
+     * @var SiteTree
      */
     protected $page;
 
@@ -36,7 +36,7 @@ class HealthAnalysisField extends LiteralField
      *
      * @param string                               $name
      * @param \SilverStripe\Forms\FormField|string $title
-     * @param \Page                                $page
+     * @param SiteTree                                $page
      */
     public function __construct($name, $title, SiteTree $page)
     {

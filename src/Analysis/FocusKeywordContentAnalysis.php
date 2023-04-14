@@ -34,6 +34,7 @@ class FocusKeywordContentAnalysis extends Analysis
      * By default, this will only check the default "Content" field, override $seo_content_fields in the correct order
      * of display to include other fields
      *
+     * @psalm-suppress UndefinedDocblockClass
      * @return string
      */
     public function getContentFromDom()
@@ -46,7 +47,6 @@ class FocusKeywordContentAnalysis extends Analysis
 
 
         $result = $dom->find('body', 0);
-
         return strtolower(strip_tags($result ? $result->innertext() : ''));
     }
 

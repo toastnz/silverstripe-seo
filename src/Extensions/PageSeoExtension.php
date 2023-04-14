@@ -99,6 +99,7 @@ class PageSeoExtension extends DataExtension
 
     /**
      * @param FieldList $fields
+     * @psalm-suppress UndefinedClass
      */
     public function updateCMSFields(FieldList $fields)
     {

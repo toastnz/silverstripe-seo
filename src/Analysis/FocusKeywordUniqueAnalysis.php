@@ -48,6 +48,7 @@ class FocusKeywordUniqueAnalysis extends Analysis
      * You must override this in your subclass and perform your own checks. An integer must be returned
      * that references an index of the array you return in your response() method override in your subclass.
      *
+     * @psalm-suppress UndefinedClass
      * @return int
      */
     public function run()

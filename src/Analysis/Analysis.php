@@ -19,7 +19,7 @@ abstract class Analysis
 
     protected $domParser;
 
-    /** @var \Page|PageHealthExtension */
+    /** @var SiteTree|PageHealthExtension */
     protected $page;
 
     /** @var int The result, set after {@link inspect()} completes successfully */
@@ -65,6 +65,7 @@ abstract class Analysis
      * semantically correct. Semantically correct pages tend to rank higher in search engines for various reasons (such
      * as how effectively crawlers parse your website etc.).
      *
+     * @psalm-suppress UndefinedDocblockClass
      * @return string
      */
     public function getContent()
@@ -89,6 +90,7 @@ abstract class Analysis
 
     /**
      * @return \simple_html_dom\simple_html_dom
+     * @psalm-suppress UndefinedDocblockClass
      */
     public function getRenderedHtmlDomParser()
     {

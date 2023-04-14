@@ -7,6 +7,7 @@ use QuinnInteractive\Seo\Builders\TwitterMetaGenerator;
 use QuinnInteractive\Seo\Extensions\PageHealthExtension;
 use QuinnInteractive\Seo\Extensions\PageSeoExtension;
 use QuinnInteractive\Seo\Extensions\SiteConfigSettingsExtension;
+use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Control\Controller;
 use SilverStripe\Core\Config\Configurable;
 use SilverStripe\Core\Injector\Injectable;
@@ -26,7 +27,7 @@ class Seo
      * Collates all content fields from {@link seoContentFields()} into a single string. Which makes it very important
      * that the seoContentFields array is in the correct order as to which they display.
      *
-     * @param \Page|PageHealthExtension $owner
+     * @param SiteTree|PageHealthExtension $owner
      *
      * @return string
      */
@@ -51,7 +52,7 @@ class Seo
     /**
      * Creates article:published_time and article:modified_time tags
      *
-     * @param \Page|PageSeoExtension|Object $owner
+     * @param SiteTree|PageSeoExtension|Object $owner
      *
      * @return array
      */

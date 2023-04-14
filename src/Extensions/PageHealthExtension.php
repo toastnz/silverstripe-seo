@@ -5,6 +5,7 @@ namespace QuinnInteractive\Seo\Extensions;
 use KubAT\PhpSimple\HtmlDomParser;
 use QuinnInteractive\Seo\Forms\GoogleSearchPreview;
 use QuinnInteractive\Seo\Forms\HealthAnalysisField;
+use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Control\Controller;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
@@ -34,11 +35,11 @@ class PageHealthExtension extends DataExtension
     ];
 
     /**
-     * @return \Page|static
+     * @return SiteTree|static
      */
     public function getOwner()
     {
-        /** @var \Page $owner */
+        /** @var SiteTree $owner */
         $owner = parent::getOwner();
         return $owner;
     }
@@ -71,6 +72,7 @@ class PageHealthExtension extends DataExtension
     /**
      * Gets the DOM parser for the rendered html
      *
+     * @psalm-suppress UndefinedDocblockClass
      * @return \simple_html_dom\simple_html_dom
      */
     public function getRenderedHtmlDomParser()
@@ -93,6 +95,7 @@ class PageHealthExtension extends DataExtension
 
     /**
      * @param FieldList $fields
+     * @psalm-suppress UndefinedClass
      */
     public function updateCMSFields(FieldList $fields)
     {

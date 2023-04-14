@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="5.9.0@8b9ad1eb9e8b7d3101f949291da2b9f7767cd163">
+  <file src="src/Analysis/Analysis.php">
+    <TooManyArguments>
+      <code><![CDATA[HtmlDomParser::str_get_html(file_get_contents($this->getPage()->AbsoluteLink()))]]></code>
+    </TooManyArguments>
+  </file>
+  <file src="src/Analysis/FocusKeywordContentAnalysis.php">
+    <UndefinedMagicMethod>
+      <code>getRenderedHtmlDomParser</code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$this->getPage()->FocusKeyword]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedPropertyFetch>
+      <code><![CDATA[$this->getPage()->FocusKeyword]]></code>
+    </UndefinedPropertyFetch>
+  </file>
+  <file src="src/Analysis/FocusKeywordUniqueAnalysis.php">
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$this->getPage()->FocusKeyword]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedPropertyFetch>
+      <code><![CDATA[$this->getPage()->FocusKeyword]]></code>
+      <code><![CDATA[$this->getPage()->ID]]></code>
+    </UndefinedPropertyFetch>
+  </file>
+  <file src="src/Analysis/FocusKeywordUrlAnalysis.php">
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$this->getPage()->FocusKeyword]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedPropertyFetch>
+      <code><![CDATA[$this->getPage()->FocusKeyword]]></code>
+      <code><![CDATA[$this->getPage()->ParentID]]></code>
+      <code><![CDATA[$this->getPage()->URLSegment]]></code>
+      <code><![CDATA[$this->getPage()->URLSegment]]></code>
+    </UndefinedPropertyFetch>
+  </file>
+  <file src="src/Analysis/MetaDescAnalysis.php">
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$this->getPage()->FocusKeyword]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedPropertyFetch>
+      <code><![CDATA[$this->getPage()->FocusKeyword]]></code>
+      <code><![CDATA[$this->getPage()->MetaDescription]]></code>
+    </UndefinedPropertyFetch>
+  </file>
+  <file src="src/Analysis/TitleAnalysis.php">
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$this->getPage()->FocusKeyword]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedPropertyFetch>
+      <code><![CDATA[$this->getPage()->FocusKeyword]]></code>
+      <code><![CDATA[$this->getPage()->Title]]></code>
+    </UndefinedPropertyFetch>
+  </file>
+  <file src="src/Builders/FacebookMetaGenerator.php">
+    <InvalidPropertyAssignmentValue>
+      <code>$height</code>
+      <code>$width</code>
+    </InvalidPropertyAssignmentValue>
+  </file>
+  <file src="src/Builders/TwitterMetaGenerator.php">
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$siteConfig->TwitterAccountName]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedPropertyFetch>
+      <code><![CDATA[$siteConfig->TwitterAccountName]]></code>
+    </UndefinedPropertyFetch>
+  </file>
+  <file src="src/Extensions/PageHealthExtension.php">
+    <TooManyArguments>
+      <code><![CDATA[HtmlDomParser::str_get_html($this->getRenderedHtml())]]></code>
+    </TooManyArguments>
+    <UndefinedMagicPropertyAssignment>
+      <code><![CDATA[$this->owner->Form]]></code>
+    </UndefinedMagicPropertyAssignment>
+  </file>
+  <file src="src/Extensions/SiteConfigSettingsExtension.php">
+    <ImplicitToStringCast>
+      <code>string</code>
+    </ImplicitToStringCast>
+  </file>
+  <file src="src/Forms/GoogleSearchPreview.php">
+    <ImplicitToStringCast>
+      <code><![CDATA[ArrayData::create([
+            'Title'           => $title,
+            'Page'            => $page,
+            'AbsoluteLink'    => Controller::join_links(
+                Director::absoluteBaseURL(),
+                str_replace($page->URLSegment, '', $page->Link()),
+                $this->urlSegmentHighlight($page->URLSegment, $page->FocusKeyword)
+            ),
+            'MetaDescription' => $page->MetaDescription ? $this->highlight(
+                $page->MetaDescription,
+                $page->FocusKeyword
+            ) : null,
+            'FirstParagraph'  => $firstParagraph ? $this->highlight(
+                $firstParagraph->innertext(),
+                $page->FocusKeyword
+            ) : null,
+            'RenderedTitle'   => $renderedTitle ? $this->highlight(
+                $renderedTitle->innertext(),
+                $page->FocusKeyword
+            ) : null
+        ])->renderWith(self::class)]]></code>
+    </ImplicitToStringCast>
+    <TooManyArguments>
+      <code><![CDATA[Controller::join_links(
+                Director::absoluteBaseURL(),
+                str_replace($page->URLSegment, '', $page->Link()),
+                $this->urlSegmentHighlight($page->URLSegment, $page->FocusKeyword)
+            )]]></code>
+    </TooManyArguments>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$page->FocusKeyword]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedPropertyFetch>
+      <code><![CDATA[$page->FocusKeyword]]></code>
+      <code><![CDATA[$page->FocusKeyword]]></code>
+      <code><![CDATA[$page->MetaDescription]]></code>
+      <code><![CDATA[$page->MetaDescription]]></code>
+      <code><![CDATA[$page->URLSegment]]></code>
+      <code><![CDATA[$page->URLSegment]]></code>
+    </UndefinedPropertyFetch>
+  </file>
+  <file src="src/Forms/HealthAnalysisField.php">
+    <ImplicitToStringCast>
+      <code><![CDATA[ArrayData::create(
+            [
+                'Title'      => $title,
+                'Results'    => $this->runAnalyses(),
+            ]
+        )->renderWith(self::class)]]></code>
+    </ImplicitToStringCast>
+  </file>
+  <file src="src/Seo.php">
+    <UndefinedMagicMethod>
+      <code>seoContentFields</code>
+      <code>updateCollateContentFields</code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$sc->GoogleAnalytics]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedMethod>
+      <code>updateCollateContentFields</code>
+    </UndefinedMethod>
+    <UndefinedPropertyFetch>
+      <code><![CDATA[$sc->GoogleAnalytics]]></code>
+    </UndefinedPropertyFetch>
+  </file>
+</files>
